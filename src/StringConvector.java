@@ -2,9 +2,6 @@
 public class StringConvector {
     /*
     Метод latterRevert разворачивает строку не трогает символы и цифры.
-    Реализация: два курсора, двигаються на встречу друг другу. Если
-    указатели курсора направленны на буквы одновремменно то происходит
-    swap(замен букв местами). Условия выхода из цикла, встреча курсоров
      */
     public static String letterRevert(String inputString) {
         char[] outputString = inputString.toCharArray();
