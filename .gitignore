@@ -3,6 +3,8 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .kotlin
+.idea/
+*.iml
 
 ### Eclipse ###
 .apt_generated
@@ -26,5 +28,21 @@ bin/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
+### OS ###
+Thumbs.db
 .DS_Store
+
+### Build ###
+target/
+build/
+.gradle/
+
+### Logs ###
+*.log
+
+### Java ###
+*.class
+*.jar
+
+### Env ###
+.env
