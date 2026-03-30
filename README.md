@@ -17,12 +17,15 @@
 
 ```
 src/
- ├── Main.java
- └── StringConvector.java
+ └── com/
+     └── example/
+         ├── Main.java
+         └── convertor/
+             └── StringConvertor.java
 ```
 
 * **Main** — точка входа в приложение
-* **StringConvector** — содержит основную бизнес-логику алгоритма
+* **StringConvertor** — содержит основную бизнес-логику алгоритма
 
 ---
 
@@ -53,8 +56,9 @@ t@eb eht av$J!123
 ## 🚀 Как запустить
 
 ```bash
-javac Main.java StringConvector.java
-java Main
+javac src/com/example/Main.java src/com/example/convector/StringConvector.java
+
+java -cp out com.example.Main
 ```
 
 ---
