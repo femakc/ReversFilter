@@ -1,13 +1,11 @@
+package com.exemle.converter;
 
-public class StringConvector {
-    /*
-    Метод latterRevert разворачивает строку не трогает символы и цифры.
-     */
+public class StringConverter {
     public static String letterRevert(String inputString) {
         char[] outputString = inputString.toCharArray();
 
         if (inputString.isEmpty()) {
-            return "Input string is empty";
+            return "";
         }
 
         int leftCursor = 0;
@@ -21,11 +19,11 @@ public class StringConvector {
                 rightCursor--;
                 continue;
             }
-            //swap
+
             char tempChar = outputString[leftCursor];
             outputString[leftCursor] = outputString[rightCursor];
             outputString[rightCursor] = tempChar;
-            //move cursor
+
             leftCursor++;
             rightCursor--;
         }
