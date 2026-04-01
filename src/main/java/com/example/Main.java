@@ -1,9 +1,9 @@
-package com.exemle;
+package com.example;
 
-import com.exemle.converter.StringConverter;
+import com.example.converter.StringConverter;
 
 public class Main {
-    public static void main() {
+    public static void main(String[] args) {
         String inputString = "J@va the be$t!123";
         System.out.println(StringConverter.letterRevert(inputString));
     }
