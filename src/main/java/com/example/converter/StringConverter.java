@@ -1,12 +1,13 @@
-package com.exemle.converter;
+package com.example.converter;
 
 public class StringConverter {
     public static String letterRevert(String inputString) {
-        char[] outputString = inputString.toCharArray();
 
-        if (inputString.isEmpty()) {
+        if (inputString == null || inputString.isEmpty()) {
             return "";
         }
+
+        char[] outputString = inputString.toCharArray();
 
         int leftCursor = 0;
         int rightCursor = outputString.length - 1;

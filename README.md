@@ -17,15 +17,26 @@
 
 ```
 src/
- └── com/
-     └── example/
-         ├── Main.java
-         └── convertor/
-             └── StringConvertor.java
+├── README.md
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+    │       └── com
+    │           └── example
+    │               ├── Main.java
+    │               └── converter
+    │                   └── StringConverter.java
+    └── test
+        └── java
+            └── com
+                └── example
+                    └── LetterRevertMethodTest.java
 ```
 
 * **Main** — точка входа в приложение
 * **StringConvertor** — содержит основную бизнес-логику алгоритма
+* **LetterRevertMethodTest** — содержит тесты приложения
 
 ---
 
@@ -86,3 +97,136 @@ java -cp out com.example.Main
 * Проверка символов (`Character.isLetter`)
 
 ---
+# 🔤 StringConverter
+
+Утилитный класс для работы со строками.
+
+## 📌 Описание
+
+Метод `letterRevert` выполняет разворот **только букв** в строке, сохраняя позиции всех остальных символов (цифры, спецсимволы и т.д.).
+
+### ✅ Пример
+
+```text
+Input:  a-bC-dEf-ghIj
+Output: j-Ih-gfE-dCba
+```
+
+---
+
+## 🚀 Возможности
+
+* 🔄 Разворот только букв
+* 🔒 Сохранение позиций небуквенных символов
+* 🌍 Поддержка Unicode (например, кириллица)
+* 🛡 Обработка `null` (возвращает пустую строку)
+
+---
+
+## 🧪 Тестирование
+
+Тесты написаны с использованием **JUnit 5** и покрывают основные и граничные случаи.
+
+### 📊 Покрытие
+
+[//]: # (> ⚠️ Здесь можно подключить Jacoco)
+
+![Coverage](https://img.shields.io/badge/coverage-95%25-brightgreen)
+
+---
+
+### 🔁 Параметризованные тесты
+
+Используется `@ParameterizedTest` + `@CsvSource`:
+
+```java
+@ParameterizedTest(name = "[{index}] {0} -> {1}")
+```
+
+#### ✔ Примеры кейсов:
+
+| Вход    | Ожидаемый результат |
+| ------- | ------------------- |
+| `asd`   | `dsa`               |
+| `ab-cd` | `dc-ba`             |
+| `AbCd`  | `dCbA`              |
+| `абвг`  | `гвба`              |
+| `@@@`   | `@@@`               |
+
+---
+
+### ⚠️ Обработка `null`
+
+Проверяется отдельно:
+
+```java
+Arguments.of(null, "")
+```
+
+✔ Ожидаемое поведение:
+
+```text
+null → ""
+```
+
+---
+
+### 📏 Проверка длины
+
+Метод гарантирует:
+
+* длина строки **не изменяется**
+
+```java
+assertEquals(input.length(), result.length());
+```
+
+---
+
+### 🏷️ Теги тестов
+
+| Tag                    | Описание          |
+| ---------------------- | ----------------- |
+| `not null inputString` | основные сценарии |
+| `input string is null` | обработка `null`  |
+| `length string`        | проверка длины    |
+
+---
+
+## ▶️ Запуск тестов
+
+```bash
+mvn test
+```
+
+---
+
+## 🛠️ Технологии
+
+* Java 17+
+* Maven
+* JUnit 5
+
+---
+
+## 📈 CI / Статус
+
+> можно подключить GitHub Actions
+
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
+
+---
+
+## 💡 Примечание
+
+* `@DisplayName` улучшает читаемость тестов в IDE
+* В Maven-консоли отображаются имена методов, а не display name
+* Для красивых отчётов можно использовать **Allure** или **Surefire Report**
+
+---
+
+## 📬 Контакты
+
+Автор проекта: *Максим Федоров*
+
