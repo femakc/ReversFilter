@@ -17,15 +17,26 @@
 
 ```
 src/
- └── com/
-     └── example/
-         ├── Main.java
-         └── convertor/
-             └── StringConvertor.java
+├── README.md
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+    │       └── com
+    │           └── example
+    │               ├── Main.java
+    │               └── converter
+    │                   └── StringConverter.java
+    └── test
+        └── java
+            └── com
+                └── example
+                    └── LetterRevertMethodTest.java
 ```
 
 * **Main** — точка входа в приложение
 * **StringConvertor** — содержит основную бизнес-логику алгоритма
+* **LetterRevertMethodTest** — содержит тесты приложения
 
 ---
 

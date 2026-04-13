@@ -54,8 +54,7 @@ public class LetterRevertMethodTest {
     @Test
     public void shouldKeepSameLength() {
         String inputString = "asd-123 er";
-        int inputStringLength = inputString.length();
-        String resultLength = StringConverter.letterRevert(inputString);
-        assertEquals(inputStringLength, resultLength.length());
+        String resultStringConverter = StringConverter.letterRevert(inputString);
+        assertEquals(inputString.length(), resultStringConverter.length());
     }
 }
